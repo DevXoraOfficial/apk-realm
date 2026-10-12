@@ -33,7 +33,7 @@ tabButtons.forEach(btn => {
     });
 });
 
-// Download Modal Timer System (Increases Ad Impressions/CTR)
+// Download Modal Timer System
 let countdownInterval;
 
 function openDownloadModal(appName, size, version) {
@@ -45,15 +45,15 @@ function openDownloadModal(appName, size, version) {
     const countdownEl = document.getElementById('countdown');
 
     title.innerText = appName;
-    info.innerText = `Size: ${size} | Version: ${version}`;
+    info.innerText = `Package Size: ${size} | Version: ${version}`;
     modal.style.display = 'flex';
 
     // Reset button state
     dlBtn.classList.add('disabled');
-    dlBtn.innerText = 'Preparing Download Link...';
+    dlBtn.innerText = 'Initializing Secure Link...';
     dlBtn.href = '#';
 
-    let timeLeft = 5; // 5 Seconds Countdown
+    let timeLeft = 5;
     countdownEl.innerText = timeLeft;
     timerBox.style.display = 'block';
 
@@ -67,7 +67,7 @@ function openDownloadModal(appName, size, version) {
             timerBox.style.display = 'none';
             dlBtn.classList.remove('disabled');
             dlBtn.innerText = '⚡ Download APK Now';
-            dlBtn.href = 'https://example.com/your-apk-file.apk'; // Replace with actual direct link
+            dlBtn.href = '#'; // Replace with your direct .apk file link
         }
     }, 1000);
 }
